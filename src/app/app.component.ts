@@ -1,15 +1,20 @@
-import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
-import { TitleService } from '@delon/theme';
-import { VERSION as VERSION_ALAIN } from '@delon/theme';
-import { VERSION as VERSION_ZORRO, NzModalService } from 'ng-zorro-antd';
+import { Component, OnInit, Renderer2, ElementRef, AfterViewChecked } from '@angular/core';
+import { Router, NavigationEnd }                                      from '@angular/router';
+import { filter }                                                     from 'rxjs/operators';
+import { TitleService }                                               from '@delon/theme';
+import { VERSION as VERSION_ALAIN }                                   from '@delon/theme';
+import { VERSION as VERSION_ZORRO, NzModalService }                   from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-root',
-  template: `<router-outlet></router-outlet>`,
+  template: `
+    <router-outlet></router-outlet>`,
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
+  ngAfterViewChecked(): void {
+    // console.log('app component view check.');
+  }
+
   constructor(
     el: ElementRef,
     renderer: Renderer2,

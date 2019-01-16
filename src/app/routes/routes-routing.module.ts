@@ -12,12 +12,13 @@ import { DashboardAnalysisComponent } from './dashboard/analysis/analysis.compon
 import { DashboardMonitorComponent } from './dashboard/monitor/monitor.component';
 import { DashboardWorkplaceComponent } from './dashboard/workplace/workplace.component';
 // passport pages
-import { UserLoginComponent } from './passport/login/login.component';
-import { UserRegisterComponent } from './passport/register/register.component';
+import { UserLoginComponent }          from './passport/login/login.component';
+import { UserRegisterComponent }       from './passport/register/register.component';
 import { UserRegisterResultComponent } from './passport/register-result/register-result.component';
 // single pages
-import { CallbackComponent } from './callback/callback.component';
-import { UserLockComponent } from './passport/lock/lock.component';
+import { CallbackComponent }           from './callback/callback.component';
+import { UserLockComponent }           from './passport/lock/lock.component';
+import { G2TestComponent }             from './g2-test/g2-test.component';
 
 const routes: Routes = [
   {
@@ -81,6 +82,7 @@ const routes: Routes = [
   },
   // 单页不包裹Layout
   { path: 'callback/:type', component: CallbackComponent },
+  { path: 'g2-test', component: G2TestComponent },
   { path: '**', redirectTo: 'exception/404' },
 ];
 
